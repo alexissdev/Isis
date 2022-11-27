@@ -1,6 +1,8 @@
 import "./environment/local.environment.ts";
 import "./database/database.ts";
 
-import { start } from './models/server.ts';
+import Server from './models/server.ts';
 
-start();
+const server: Server = new Server();
+
+server.start();
