@@ -1,0 +1,18 @@
+import { Router } from "npm:express";
+import {
+  createUser,
+  deleteUser,
+  getUser,
+  getUsers,
+  updateUser,
+} from "../controllers/user.controller.ts";
+
+const router = Router();
+
+router.get("/api/user", getUsers);
+router.get("/api/user/:id", getUser);
+router.delete("/api/user/:id", deleteUser);
+router.put("/api/user/:id", updateUser);
+router.post("/api/user", createUser);
+
+export default router;
