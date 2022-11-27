@@ -1,8 +1,8 @@
-import express, { Express } from "npm:express";
+import express, { Application } from "npm:express";
 import loadRoutes from "../loader/routes.loader.ts";
 
 export default class Server {
-  private application: Express;
+  private application: Application;
 
   public constructor() {
     this.application = express();
