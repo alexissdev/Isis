@@ -11,7 +11,7 @@ export default class Server {
   public start(): void {
     this.config();
 
-    const serverPort = Deno.env.get("PORT");
+    const serverPort: string = Deno.env.get("PORT") || "3000";
 
     this.application.listen(serverPort, () => {
       console.log(`Server running in ${serverPort} port.`);
