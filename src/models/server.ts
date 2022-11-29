@@ -1,5 +1,6 @@
 import express, { Application } from "npm:express";
 import loadRoutes from "../loader/routes.loader.ts";
+import connectMongoose from "../database/database.ts";
 
 export default class Server {
   private application: Application;
@@ -19,6 +20,8 @@ export default class Server {
   }
 
   private config(): void {
+    connectMongoose();
+
     this.application.use(express.json());
     loadRoutes(this.application);
   }
